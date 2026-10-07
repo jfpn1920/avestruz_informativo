@@ -1,0 +1,139 @@
+/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
+:root {
+    --fondo: #f3ecdf;          /* fondo de la página */
+    --panel: #ffffff;          /* fondo de las tarjetas */
+    --texto: #2c2418;          /* color principal del texto */
+    --texto-suave: #716650;    /* textos secundarios */
+    --borde: #e0d5be;          /* color de los bordes */
+    --acento: #7a4b2a;         /* marrón: botones y títulos */
+    --crema: #faf4e6;          /* fondo de los datos */
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;    /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+    padding: 24px 16px;
+}
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 520px;
+    margin: 0 auto;
+}
+/* ===== FICHA ===== */
+.ficha {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;          /* recorta la imagen en las esquinas */
+    margin-bottom: 16px;
+}
+.imagen svg {
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+/* ===== TÍTULO DE LA FICHA ===== */
+.titulo {
+    display: flex;
+    justify-content: space-between;  /* nombre a la izquierda, botón a la derecha */
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px 8px;
+}
+.titulo h1 {
+    font-size: 2rem;
+    color: var(--acento);
+    line-height: 1.1;
+}
+.cientifico {
+    font-style: italic;          /* los nombres científicos van en cursiva */
+    color: var(--texto-suave);
+}
+/* ===== BOTÓN FAVORITO ===== */
+.btn-favorito {
+    padding: 8px 14px;
+    background: none;
+    color: var(--acento);
+    border: 2px solid var(--acento);
+    border-radius: 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    white-space: nowrap;       /* el texto del botón no se parte */
+}
+/* Favorito activado (clase agregada con JavaScript) */
+.btn-favorito.activo {
+    background: var(--acento);
+    color: #fff;
+}
+/* ===== DATOS CLAVE ===== */
+.datos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* dos columnas */
+    gap: 10px;
+    padding: 12px 20px 20px;
+}
+.dato {
+    background: var(--crema);
+    border-radius: 8px;
+    padding: 10px 12px;  
+}
+.dato dt {
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+}
+.dato dd {
+    font-weight: bold;
+}
+/* ===== PANELES (dato curioso y notas) ===== */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+.panel h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--acento);
+}
+.curiosidad {
+    min-height: 3em;           /* evita saltos cuando cambia el texto */
+}
+.progreso {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    margin: 8px 0 12px;
+}
+.boton {
+    width: 100%;
+    padding: 12px;
+    background: var(--acento);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+/* ===== NOTAS ===== */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+textarea:focus {
+    outline: 2px solid var(--acento);
+}
