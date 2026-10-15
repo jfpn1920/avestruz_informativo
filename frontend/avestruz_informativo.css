@@ -1,20 +1,17 @@
-/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
-:root {
-    --fondo: #f3ecdf;          /* fondo de la página */
-    --panel: #ffffff;          /* fondo de las tarjetas */
-    --texto: #2c2418;          /* color principal del texto */
-    --texto-suave: #716650;    /* textos secundarios */
-    --borde: #e0d5be;          /* color de los bordes */
-    --acento: #7a4b2a;         /* marrón: botones y títulos */
-    --crema: #faf4e6;          /* fondo de los datos */
-}
-/* ===== REINICIO BÁSICO ===== */
 * {
-    box-sizing: border-box;    /* el padding no agranda los elementos */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+:root {
+    --fondo: #f3ecdf;
+    --panel: #ffffff;
+    --texto: #2c2418;
+    --texto-suave: #716650;
+    --borde: #e0d5be;
+    --acento: #7a4b2a;
+    --crema: #faf4e6;
+}
 body {
     font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     background: var(--fondo);
@@ -22,17 +19,18 @@ body {
     line-height: 1.5;
     padding: 24px 16px;
 }
-/* Contenedor central con ancho máximo */
+/*---------------------------------*/
+/*--|estilo_avestruz_informativo|--*/
+/*---------------------------------*/
 .app {
     max-width: 520px;
     margin: 0 auto;
 }
-/* ===== FICHA ===== */
 .ficha {
     background: var(--panel);
     border: 1px solid var(--borde);
     border-radius: 12px;
-    overflow: hidden;          /* recorta la imagen en las esquinas */
+    overflow: hidden;
     margin-bottom: 16px;
 }
 .imagen svg {
@@ -40,10 +38,12 @@ body {
     width: 100%;
     height: 300px;
 }
-/* ===== TÍTULO DE LA FICHA ===== */
+/*-------------------*/
+/*--|estilo_titulo|--*/
+/*-------------------*/
 .titulo {
     display: flex;
-    justify-content: space-between;  /* nombre a la izquierda, botón a la derecha */
+    justify-content: space-between;
     align-items: center;
     gap: 12px;
     padding: 16px 20px 8px;
@@ -54,10 +54,12 @@ body {
     line-height: 1.1;
 }
 .cientifico {
-    font-style: italic;          /* los nombres científicos van en cursiva */
+    font-style: italic;
     color: var(--texto-suave);
 }
-/* ===== BOTÓN FAVORITO ===== */
+/*---------------------*/
+/*--|estilo_favorito|--*/
+/*---------------------*/
 .btn-favorito {
     padding: 8px 14px;
     background: none;
@@ -66,24 +68,25 @@ body {
     border-radius: 20px;
     font-size: 0.95rem;
     cursor: pointer;
-    white-space: nowrap;       /* el texto del botón no se parte */
+    white-space: nowrap;
 }
-/* Favorito activado (clase agregada con JavaScript) */
 .btn-favorito.activo {
     background: var(--acento);
     color: #fff;
 }
-/* ===== DATOS CLAVE ===== */
+/*------------------*/
+/*--|estilo_datos|--*/
+/*------------------*/
 .datos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* dos columnas */
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 12px 20px 20px;
 }
 .dato {
     background: var(--crema);
     border-radius: 8px;
-    padding: 10px 12px;  
+    padding: 10px 12px;
 }
 .dato dt {
     font-size: 0.8rem;
@@ -93,7 +96,9 @@ body {
 .dato dd {
     font-weight: bold;
 }
-/* ===== PANELES (dato curioso y notas) ===== */
+/*--------------------*/
+/*--|estilo_paneles|--*/
+/*--------------------*/
 .panel {
     background: var(--panel);
     border: 1px solid var(--borde);
@@ -107,7 +112,7 @@ body {
     color: var(--acento);
 }
 .curiosidad {
-    min-height: 3em;           /* evita saltos cuando cambia el texto */
+    min-height: 3em;
 }
 .progreso {
     font-size: 0.85rem;
@@ -124,7 +129,9 @@ body {
     font-size: 1rem;
     cursor: pointer;
 }
-/* ===== NOTAS ===== */
+/*------------------*/
+/*--|estilo_notas|--*/
+/*------------------*/
 textarea {
     width: 100%;
     padding: 10px;
